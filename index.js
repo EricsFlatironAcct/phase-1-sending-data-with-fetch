@@ -14,8 +14,7 @@ function submitData(userName, userEmail){
     }
     return fetch("http://localhost:3000/users", PostData)
     .then(resp =>resp.json())
-    .then(user =>{
-        console.log(user)
-    })
-    .catch(e => console.log(`Recieved error: ${e}`))
+    .then(user => document.querySelector('body').append(user.id))
+    .catch(e => document.querySelector('body').append(e))
 }
+//submitData("ij24n3b", 'ijn2@aol.com')
